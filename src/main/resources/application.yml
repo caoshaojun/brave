@@ -1,5 +1,5 @@
 server:
-  port: 1996
+  port: 8002
   servlet:
     context-path: /solid
 
@@ -20,4 +20,4 @@ logging:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %clr(-%5p)  %clr(${PID:- }){magenta} --- %clr([%15.15t]){faint} %highlight(%-80.80logger{300}){cyan} %clr(:) %m %n%wEx"
 
 mybatis:
-  mapper-locations: classpath*:sqlMapper/*.xml
+  mapper-locations: classpath*:mapper/*.xml
