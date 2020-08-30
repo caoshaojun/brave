@@ -12,7 +12,11 @@
 
     <!-- 一个数据库一个context -->
     <!--defaultModelType="flat" 大数据字段，不分表 -->
-    <context id="MysqlTables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+    <!--targetRuntime="Mybatis" 和 targetRuntime="MyBatis3Simple" MyBatis3模式默认生成的对象将包
+    含很多"by Example"的方法，如果不想生成这些，可以在后续的table元素中配置取消；MyBatis3Simple模式默认
+    每个表生成一个实体对象，生成的Mapper接口仅包含必须的5个方法：deleteByPrimaryKey、insert、
+    selectByPrimaryKey、selectAll、updateByPrimaryKey。-->
+    <context id="MysqlTables" targetRuntime="MyBatis3" defaultModelType="flat">
         <!-- 自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表；
         一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖 -->
         <property name="autoDelimitKeywords" value="true" />
@@ -50,6 +54,15 @@
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.brave.solid.domain.mapper"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
         <!-- table可以有多个,每个数据库中的表都可以写一个table，tableName表示要匹配的数据库表,也可以在tableName属性中通过使用%通配符来匹配所有数据库表,只有匹配的表才会自动生成文件 -->
         <table tableName="user" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true">
             <!-- 数据库表主键 -->
