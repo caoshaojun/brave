@@ -16,11 +16,12 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ExceptionHandler(value = BizException.class)
     public ActionResult handle(BizException e) {
-        if (e.getCode() == null) {
+/*        if (e.getCode() == null) {
             return ActionResult.exceptionFail(e.getMessage());
         } else {
             return ActionResult.bizReturn(e.getMessage(), e.getCode().intValue(), null);
-        }
+        }*/
+return null;
     }
 
 }

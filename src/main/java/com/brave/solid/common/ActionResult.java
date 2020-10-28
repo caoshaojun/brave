@@ -32,7 +32,7 @@ public class ActionResult {
         return actionResult;
     }
 
-    public static ActionResult exceptionFail(String msg){
+/*    public static ActionResult exceptionFail(String msg){
         ActionResult actionResult = new ActionResult();
         actionResult.setCode(FAILURE_EXCEPTION_CODE);
         actionResult.setMessage(msg);
@@ -46,5 +46,5 @@ public class ActionResult {
         actionResult.setMessage(msg);
         actionResult.setData(data);
         return actionResult;
-    }
+    }*/
 }
