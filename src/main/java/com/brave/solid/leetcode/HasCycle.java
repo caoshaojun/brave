@@ -17,7 +17,11 @@ public class HasCycle {
         listNode.next.next.next.next = listNode.next;
         boolean re = hasCycle(listNode);
         System.out.println(re);
+
+        ListNode res = detectCycle(listNode);
+        System.out.println(res.val);
     }
+
     /**
      * 简单-环形链表
      *
@@ -28,18 +32,48 @@ public class HasCycle {
         if (head == null || head.next == null) {
             return false;
         }
-        ListNode fast = head.next;
+        ListNode fast = head;
         ListNode slow = head;
-        while (fast != null){
-            if(fast.next == null || fast.next.next == null){
+        while (fast != null) {
+            if (fast.next == null || fast.next.next == null) {
                 return false;
             }
             fast = fast.next.next;
             slow = slow.next;
-            if(fast == slow){
+            if (fast == slow) {
                 return true;
             }
         }
         return false;
+    }
+
+    /**
+     * 环形链表
+     *
+     * @param head
+     * @return
+     */
+    public static ListNode detectCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == null || fast.next == null) {
+                return null;
+            }
+            if (fast == slow) {
+                break;
+            }
+        }
+        slow = head;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
     }
 }
