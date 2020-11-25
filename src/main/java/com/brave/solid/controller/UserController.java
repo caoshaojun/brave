@@ -45,7 +45,7 @@ public class UserController {
         studentList.add(student2);
         studentList.add(student3);
         Boolean re = student3.equals(student1);
-        List<String> names = studentList.stream().map(t->t.getName()).distinct().collect(Collectors.toList());
+        List<String> names = studentList.stream().map(Student::getName).distinct().collect(Collectors.toList());
         System.out.println(names);
     }
 
