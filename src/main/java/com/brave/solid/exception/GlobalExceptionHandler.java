@@ -1,6 +1,6 @@
 package com.brave.solid.exception;
 
-import com.brave.solid.common.ActionResult;
+import com.brave.solid.common.dto.ActionResult;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

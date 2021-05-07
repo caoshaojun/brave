@@ -1,4 +1,4 @@
-package com.brave.solid.common;
+package com.brave.solid.common.dto;
 
 import lombok.Data;
 

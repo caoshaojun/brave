@@ -1,5 +1,7 @@
 package com.brave.solid.domain.entity;
 
+import lombok.Data;
+
 import java.util.List;
 
 /**
@@ -8,6 +10,7 @@ import java.util.List;
  * @Description
  * @createTime 2020年09月25日 14:01:00
  */
+@Data
 public class HostIps {
     private List<String> ips;
 }
