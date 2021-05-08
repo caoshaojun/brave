@@ -1,12 +1,9 @@
-package com.brave.solid.service.impl;
+package com.brave.solid.service.user.impl;
 
-import com.brave.solid.domain.entity.User;
 import com.brave.solid.domain.mapper.UserMapper;
-import com.brave.solid.service.UserService;
+import com.brave.solid.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class UserServiceImpl implements UserService {

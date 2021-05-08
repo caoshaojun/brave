@@ -2,7 +2,7 @@ package com.brave.solid.controller;
 
 import com.brave.solid.common.dto.ActionResult;
 import com.brave.solid.domain.entity.HostIps;
-import com.brave.solid.service.UserService;
+import com.brave.solid.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

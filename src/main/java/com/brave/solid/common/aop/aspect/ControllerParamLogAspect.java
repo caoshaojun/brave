@@ -61,7 +61,7 @@ public class ControllerParamLogAspect {
             }
         } catch (Exception e) {
             log.error("AOP methodBefore异常：{}", joinPoint.getSignature());
-            e.printStackTrace();
+            throw e;
         }
     }
 
@@ -72,7 +72,7 @@ public class ControllerParamLogAspect {
             }
         } catch (Exception e) {
             log.error("AOP methodAfterReturn异常:{}", joinPoint.getSignature());
-            e.printStackTrace();
+            throw e;
         }
     }
 

@@ -1,4 +1,4 @@
-package com.brave.solid.service;
+package com.brave.solid.service.user;
 
 import com.brave.solid.domain.entity.User;
 
